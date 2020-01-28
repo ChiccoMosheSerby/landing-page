@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="./img/product.png" />
+
+    <title>LandingPage</title>
+
+    <meta name="theme-color" content="#fdd214">
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#fdd214">
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="#fdd214">
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+    <header>
+
+        <img class="headerItem logo" src="./img/pruductLogo.svg"></img>
+       
+        <nav class="headerItem">
+            <a href="https://github.com/ChiccoMosheSerby/landin-page" target="_blank" class="navItem">Go To Code</a>
+
+        </nav>
+        
+    </header>
+
+    <div class="bodyWrapperGrid">
+
+        <div class="easyAppImgWraper">
+            <img class="easyAppImg" src="./img/product.png"></img>
+        </div>
+        <form id="landingForm" class="mainGridItem landingForm">
+            <div class="formHead">CONTACT US</div>
+            <input name="email" class="inputs" type="email" placeholder="Your Email" required></input>
+            <input name="name" class="inputs" type="text" placeholder="Your Name" required></input>
+            <input name="phone" class="inputs" type="tel" placeholder="Your Phone" required></input>
+            <div class="features">
+                <div style="color:rgb(134, 134, 233);"><input  type="radio" name="feature" value="A">feature A</input> </div>
+                <div style="color:rgb(216, 106, 96);"> <input type="radio" name="feature" value="B">feature B</input></div>
+                <div style="color:rgb(79, 187, 79);"><input type="radio" name="feature" value="C">feature C</input></div>
+                <div style="color:rgb(228, 140, 228);"> <input type="radio" name="feature" value="D">feature D</input> </div>
+            </div>
+            <textarea name="concept" class="inputs" type="text" placeholder="Write your free text here .."></textarea>
+            <button class="inputs submit" type="submit">SEND</button>
+            <div id="thankYou" class="thankYou"></div>
+        </form>
+
+    </div>
+
+    <footer id="footer">
+        WE'LL SHOW YOU HOW EASY IT IS!
+    </footer>
+
+    <script src="js/general.js"></script>
+
+
+</body>
+
+</html>
