@@ -30,7 +30,6 @@
 
       )
       footer.style.backgroundColor = 'var(--themColor1)';
-      footer.style.color = 'var(--themColor2)';
 
       e.target.email.value = '';
       e.target.name.value = '';
