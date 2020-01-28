@@ -59,7 +59,8 @@ header {
 .headerItem {}
 
 .logo {
-    height: 100%;
+    width: auto;
+    height:  100%;
     margin-left: 15px;
 }
 
@@ -103,7 +104,7 @@ nav {
 }
 
 .easyAppImg {
-    width:100%;
+    width:90%;
     height: auto;
 }
 
@@ -205,8 +206,8 @@ footer {
         line-height:  calc(var(--footerHeight) / 2);
     }
     .logo {
-        height: auto;
-        width: 50%;
+        height: 100%;
+        width:auto;
         /* align-self: flex-start; */
     }
 
@@ -252,7 +253,7 @@ footer {
 
     .submit{
         width: fit-content;
-        opacity: 1;
+            opacity: 1;
 
     }
 
