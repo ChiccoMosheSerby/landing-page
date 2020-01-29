@@ -5,7 +5,6 @@ const leadsCollection = require('../db/schema').leadsSchema;
 
 router.post('/', (req, res) => {
     let newLeadObj = req.body;
-
     if (newLeadObj.email &&
         newLeadObj.name &&
         newLeadObj.phone) {
@@ -13,9 +12,19 @@ router.post('/', (req, res) => {
         //Add lead to DB
         leadDoc = new leadsCollection(newLeadObj);
         leadDoc.save().then(doc => {
-            console.log('added: ', doc)
+            console.log('added: ', doc);
+           
+           
         })
+        let featuresFromDbToString = '';
+
+        for (i = 0; i < newLeadObj.features.length; i++) {
+            featuresFromDbToString += newLeadObj.features[i]+',';
+        }
+        console.log(featuresFromDbToString)
+        
       
+
         const nodemailer = require('nodemailer');
         var transporter = nodemailer.createTransport({
             service: 'gmail',
@@ -31,15 +40,16 @@ router.post('/', (req, res) => {
             from: 'some@tst.com',
             // to: 'chiccomoshe@gmail.com',
             to: newLeadObj.email,
-            subject: 'we recived your message  - thanks from Chicco: ' ,
-            text: 'Hi '+newLeadObj.name +'\nChicco got your message - thanks !' +  '\nWe will contact you very soon!'
+            subject: 'we recived your message  - thanks from workiz easy: ' ,
+            text: 'Hi '+newLeadObj.name +'\nworkiz easy got your message about the workshops '+featuresFromDbToString+ '\nthanks !' +  '\nWe will contact you very soon!'
         };
+        
         let mailOptionsOwner = {
             from: 'some@tst.com',
             // to: 'chiccomoshe@gmail.com',
             to: 'chiccomoshe@gmail.com',
-            subject: 'new lead! - Chicco ' ,
-            text:  "name : " + newLeadObj.name +"\nemail : " + newLeadObj.email + " \nphone : " + newLeadObj.phone + "\nfeature : " + newLeadObj.feature + "\nmessage  : " +'\n'+ newLeadObj.message
+            subject: 'new lead! - Chicco - workiz easy' ,
+            text:  "name : " + newLeadObj.name +"\nemail : " + newLeadObj.email + " \nphone : " + newLeadObj.phone + "\nworkshops : " + featuresFromDbToString + "\nmessage  : " +'\n'+ newLeadObj.message
         };
 
         transporter.sendMail(mailOptions, function (error, info) {

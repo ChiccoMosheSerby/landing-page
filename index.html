@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="icon" href="./img/product.png" />
 
-    <title>LandingPage</title>
+    <title>LANDING-PAGE</title>
 
     <meta name="theme-color" content="#007f9f">
     <!-- Windows Phone -->
@@ -18,22 +18,45 @@
     <link rel="stylesheet" href="style.css">
 
 </head>
+
 <body>
 
     <header>
-
-        <img class="headerItem logo" src="./img/logo.png"></img>
-       
+        <div class="leftHeader">
+            <img class="headerItem logo" src="./img/logo.png"></img>
+            <h1>FUTURE WORKSHOPS</h1>
+        </div>
         <nav class="headerItem">
             <a href="https://github.com/ChiccoMosheSerby/landing-page" target="_blank" class="navItem">Go To Code</a>
+
         </nav>
-        
     </header>
 
-    <div class="bodyWrapperGrid">
 
-        <div class="easyAppImgWraper">
-            <img class="easyAppImg" src="./img/product.png"></img>
+    <div class="bodyWrapperGrid">
+        <div class="easyAppImg">
+
+            <div class="easyAppImgWraper">
+                <!-- <img class="easyAppImg" src="./img/easyAppImg.png"></img> -->
+                <div onclick="selectWorkshop('featureA')" class="workshop">
+                    <h2 style="color:rgb(134, 134, 233);">Workshop A</h2>
+                    <div>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Eaque magnam saepe modi maxime assumenda.</div>
+                    <p class="link" style="color:rgb(134, 134, 233); font-weight: bold;">click to select</p>
+
+                </div>
+                <div onclick="selectWorkshop('featureC')" class="workshop">
+                    <h2 style="color:rgb(216, 106, 96);">Workshop B</h2>
+                    <div>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Eaque magnam saepe modi maxime assumenda.
+                    </div>
+                    <p class="link" style="color:rgb(216, 106, 96); font-weight: bold;">click to select</p>
+
+                </div>
+
+
+            </div>
+
         </div>
         <form id="landingForm" class="mainGridItem landingForm">
             <div class="formHead">CONTACT US</div>
@@ -41,8 +64,13 @@
             <input name="name" class="inputs" type="text" placeholder="Your Name" required></input>
             <input name="phone" class="inputs" type="tel" placeholder="Your Phone" required></input>
             <div class="features">
-                <div style="color:rgb(134, 134, 233);"><input  type="radio" name="feature" value="A">feature A</input> </div>
-                <div style="color:rgb(216, 106, 96);"> <input type="radio" name="feature" value="B">feature B</input></div>
+                <div style="color:rgb(134, 134, 233);"><input type="checkbox" id="featureA" class="feature"
+                        name="featureA" value="A">Workshop A</input>
+                </div>
+
+                <div style="color:rgb(216, 106, 96);"> <input type="checkbox" id="featureC" class="feature"
+                        name="featureC" value="B">Workshop B</input>
+                </div>
             </div>
             <textarea name="concept" class="inputs" type="text" placeholder="Write your free text here .."></textarea>
             <button class="inputs submit" type="submit">SEND</button>

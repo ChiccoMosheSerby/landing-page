@@ -4,10 +4,10 @@
     --footerHeight: 60px;
 
     --themColor1: #007f9f;
-    --themColor1-Opacity: #007f9f75;
+    --themColor1-Opacity: #007f9f7e;
 
     --themColor2: #3e4a54;
-    --themColor2-Opacity: #3e4a54df;
+    --themColor2-Opacity: #3e4a546e;
 
     --themColor3: #1c7a04;
     --themColor3-Opacity: #1c7a0467;
@@ -50,17 +50,21 @@ textarea{
 header {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
     align-content: center;
     height: var(--headerHeight);
     border-bottom: var(--themColor2-Opacity) 0.6px solid;
 }
 
-.headerItem {}
+.leftHeader {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-around;
+}
 
 .logo {
-    width: auto;
-    height:  100%;
+    height: 100%;
     margin-left: 15px;
 }
 
@@ -73,6 +77,13 @@ nav {
     width: 40%;
 }
 
+header h1{
+    align-self: flex-end;
+    justify-self: center;
+    width: fit-content;
+    color: var(--themColor2);
+    font-weight: bold;
+}
 .navItem {
     height: calc(var(--headerHeight) / 2);
     line-height:  calc(var(--headerHeight) / 2);
@@ -104,10 +115,64 @@ nav {
 }
 
 .easyAppImg {
-    width:90%;
-    height: auto;
+    width: 80%;
+    height: 80%;
+    background-image: url('img/product.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
 
+.easyAppImgWraper{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    text-align: center;
+    align-items: center;
+    margin:auto;
+    width: 80%;
+    justify-items: center;
+    grid-gap:5px;
+}
+
+.workshop{
+    background-color: var(--themColor2-Opacity);
+    border-radius: 15px;
+    border:var(--borderElement);
+    color:white;
+    padding:5px;
+    width: 100%;
+    height: 100%;
+    margin: 5px;
+    min-width: fit-content;
+    position: relative;
+}
+
+.workshop:hover{
+    cursor: pointer;
+}
+
+.workshop div{
+    margin:10px;
+}
+.workshop h2{
+    background-color: black;
+    border-bottom: var(--themColor1-Opacity) 1px solid;
+    width: 100%;
+    padding:5px;
+    margin-top:1px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;}
+
+.link{
+    position: absolute;
+    bottom: 2.5px;
+    right: 10px;
+    margin:0;
+
+    }
 .landingForm {
     display: flex;
     width: 80%;
@@ -156,12 +221,14 @@ nav {
  }
 .features{
     display:grid;
-    grid-template-columns: 1fr 1fr  ;
+    grid-template-columns: 1fr 1fr;
+    grid-gap:10px;
     align-items: center;
     justify-items: center;
-    max-width: 100%;
+    max-width: fit-content;
     margin:auto;
     padding:5px;
+    grid-auto-flow: column;
  }
 .submit {
     background-color: var(--themColor1);
@@ -172,12 +239,12 @@ nav {
     border: var(--borderElement);
     padding:10px;
     opacity: 0.8;
+
 }
 
 .submit:hover {
     cursor: pointer;
     opacity: 1;
-
 }
 
 footer {
@@ -190,10 +257,10 @@ footer {
  
 }
 
-.footerItem {}
 
 
-@media only screen and (max-width: 600px) {
+
+@media only screen and (max-width: 800px) {
     header {
 
         height: calc(var(--headerHeight) / 2);
@@ -207,13 +274,20 @@ footer {
     }
     .logo {
         height: 100%;
-        width:auto;
+        width: auto;
         /* align-self: flex-start; */
     }
 
     nav {
         width: 100%;
         margin-right: 5px;
+    }
+
+    header h1{
+        display: none;
+        height: 0;
+        width: 0;
+        visibility: hidden;
     }
 
     .navItem {
@@ -232,6 +306,7 @@ footer {
         min-height: calc(100vh - calc(calc(var(--headerHeight) / 2) + calc(var(--footerHeight) / 2)));
 
     }
+    
 
     .landingForm {
         width: 100vw;
@@ -241,9 +316,16 @@ footer {
         border-radius: 0;
     }
 
-    .easyAppImgWraper {
+  
+    .easyAppImgWraper{
         grid-row: 1;
-        width: 90vw;
+
+        display:flex;
+        flex-direction: column;
+        text-align: center;
+        align-content: center;
+        margin:auto;
+        width: 100%;
     }
 
     .inputs {
@@ -253,14 +335,19 @@ footer {
 
     .submit{
         width: fit-content;
-            opacity: 1;
-
+        opacity: 1;
     }
 
     .features input{
         -ms-transform: scale(1.3); /* IE 9 */
         -webkit-transform: scale(1.3); /* Chrome, Safari, Opera */
         transform: scale(1.3);
+    }
+    .link{
+        visibility: hidden;
+        width: 0;
+        height: 0;
+        display: none;
     }
 }
 

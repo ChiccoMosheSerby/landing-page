@@ -5,11 +5,11 @@ const leadSchema = new Schema({
     email: String,
     name: String,
     phone: String,
-    feature:String,
+    features:Array,
     message: String
 });
 
 module.exports =
 {
-    leadsSchema: mongoose.model('demoleads', leadSchema),
+    leadsSchema: mongoose.model('leads', leadSchema),
 }
