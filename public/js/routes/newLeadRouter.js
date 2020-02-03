@@ -24,7 +24,6 @@ router.post('/', (req, res) => {
         console.log(featuresFromDbToString)
         
       
-
         const nodemailer = require('nodemailer');
         var transporter = nodemailer.createTransport({
             service: 'gmail',
@@ -32,10 +31,11 @@ router.post('/', (req, res) => {
             host: "smtp.gmail.com",
             secure: true,
             auth: {
-                user: 'chiccomoshe@gmail.com',
-                pass: 'mhmbstqolssvnrtm'
+                user: 'chiccomosheserby@gmail.com',
+                pass: 'chiccochicco123'
             }
         });
+
         let mailOptions = {
             from: 'some@tst.com',
             // to: 'chiccomoshe@gmail.com',
