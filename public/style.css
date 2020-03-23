@@ -25,7 +25,12 @@ body {
     direction: ltr;
     font-family: "Poppins", Sans-serif;
     height: 100vh;
-}
+
+    background: rgb(255,255,255);
+    background: -moz-linear-gradient(180deg, rgba(255,255,255,1) 12%, rgba(0,127,159,1) 42%, rgba(62,74,84,1) 100%);
+    background: -webkit-linear-gradient(180deg, rgba(255,255,255,1) 12%, rgba(0,127,159,1) 42%, rgba(62,74,84,1) 100%);
+    background: linear-gradient(180deg, rgba(255,255,255,1) 12%, rgba(0,127,159,1) 42%, rgba(62,74,84,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff",endColorstr="#3e4a54",GradientType=1);}
 
 * {
     box-sizing: border-box;
@@ -53,7 +58,11 @@ header {
     justify-content: space-around;
     align-content: center;
     height: var(--headerHeight);
-    border-bottom: var(--themColor2-Opacity) 0.6px solid;
+    /* border-bottom: var(--themColor2-Opacity) 0.6px solid; */
+    -webkit-box-shadow: 10px 10px 18px -6px rgba(0,0,0,0.75);
+-moz-box-shadow: 10px 10px 18px -6px rgba(0,0,0,0.75);
+box-shadow: 10px 10px 18px -6px rgba(0,0,0,0.75);
+
 }
 
 .leftHeader {
@@ -109,7 +118,7 @@ header h1{
     display: grid;
     grid-template-columns: 1fr 1fr;
     min-height: calc(100vh - calc(var(--headerHeight) + var(--footerHeight)));
-    background-color: var(--themColor1);
+    /* background-color: var(--themColor1); */
     align-items: center;
     justify-items: center;
 }
@@ -194,6 +203,10 @@ header h1{
     margin: 5px;
     min-width: fit-content;
     position: relative;
+
+    -webkit-box-shadow: 10px 10px 18px -6px rgba(0,0,0,0.75);
+-moz-box-shadow: 10px 10px 18px -6px rgba(0,0,0,0.75);
+box-shadow: 10px 10px 18px -6px rgba(0,0,0,0.75);
 }
 
 .workshop:hover{
@@ -232,6 +245,10 @@ header h1{
     font-weight: bold;
     margin: auto;
     justify-content: space-around;
+
+    -webkit-box-shadow: 10px 10px 18px -6px rgba(0,0,0,0.75);
+-moz-box-shadow: 10px 10px 18px -6px rgba(0,0,0,0.75);
+box-shadow: 10px 10px 18px -6px rgba(0,0,0,0.75);
 }
 
 .formHead {
@@ -295,7 +312,7 @@ header h1{
 
 footer {
     height: var(--footerHeight);
-    background-color: var(--themColor2);
+    /* background-color: var(--themColor2); */
     color: white;
     font-weight: bold;
     text-align: center;
@@ -311,6 +328,11 @@ footer {
 
         height: calc(var(--headerHeight) / 2);
         line-height:  calc(var(--headerHeight) / 2);
+
+        position:sticky;
+        top:0;
+        z-index: 5;
+        background:white;
 
     }
     footer {
